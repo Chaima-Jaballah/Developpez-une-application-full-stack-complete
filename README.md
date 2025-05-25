@@ -1,25 +1,114 @@
-# P6-Full-Stack-reseau-dev
+![image](https://github.com/user-attachments/assets/98f7211d-93e9-4fc9-b182-6969fac96705)
+# MDD
 
-## Front
+Steps to follow to run the project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.3.
+---
 
-Don't forget to install your node_modules before starting (`npm install`).
+## Technologies Used
 
-### Development server
+- **Frontend**: Angular 14 (with Angular Material)
+- **Backend**: Java Spring Boot
+- **Database**: MySQL
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+---
 
-### Build
+## How to Run the Project
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### 1. Clone the Repository
 
-### Where to start
+```bash
+git clone [https://github.com/Chaima-Jaballah/Developpez-une-application-full-stack-complete.git](https://github.com/Chaima-Jaballah/Developpez-une-application-full-stack-complete.git)
+```
 
-As you may have seen if you already started the app, a simple home page containing a logo, a title and a button is available. If you take a look at its code (in the `home.component.html`) you will see that an external UI library is already configured in the project.
+---
 
-This library is `@angular/material`, it's one of the most famous in the angular ecosystem. As you can see on their docs (https://material.angular.io/), it contains a lot of highly customizable components that will help you design your interfaces quickly.
+### 2. Frontend Setup
 
-Note: I recommend to use material however it's not mandatory, if you prefer you can get rid of it.
+Navigate to the frontend folder:
 
-Good luck!
+```bash
+cd front
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+ng serve
+```
+
+> The app will be available at [http://localhost:4200/](http://localhost:4200/)
+
+Or simply run 
+
+```bash
+ng serve -o
+```
+
+to start the development server and automatically open the app in your default browser
+
+---
+
+### 3. Backend Setup
+
+Navigate to the backend folder:
+
+```bash
+cd ../back
+```
+
+Set your database credentials (replace with your actual MySQL values):
+> Make sure that your `mdd_db` database is created beforehand
+
+
+```bash
+set DB_URL=jdbc:mysql://localhost:3306/mdd_db
+set DB_USERNAME=your_mysql_username
+set DB_PASSWORD=your_mysql_password
+```
+
+Start the Spring Boot backend:
+
+```bash
+mvn spring-boot:run
+```
+
+> Make sure your MySQL server is running and the database `mdd_db` exists
+
+---
+
+### 4. Initialize the Database
+
+Inside the backend directory, you’ll find an SQL file:
+
+```
+back/src/main/resources/SQL
+```
+
+This file contains the initial data for the `theme` table:
+
+```sql
+INSERT INTO `theme` (`id`, `description`, `name`) VALUES 
+(1, 'Développement theme', 'Développement'),
+(2, 'Design theme', 'Design'),
+(3, 'Marketing theme', 'Marketing');
+```
+
+Run this script in your MySQL database after creating the `theme` table
+
+---
+
+## Final Notes
+
+- The frontend will call the backend APIs — make sure both are running.
+- The initial themes will be visible once the database is correctly populated.
+
+---
+
+You're all set to get started! 🚀
