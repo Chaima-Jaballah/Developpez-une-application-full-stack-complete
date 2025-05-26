@@ -21,14 +21,18 @@
     <h3>Commentaires</h3>
 
     <div class="comment" *ngFor="let c of comments">
+        <span class="username">{{ c.authorUsername }}</span>
         <div class="comment-bubble">
-            <span class="username">{{ c.authorUsername }}</span>
             <p class="text">{{ c.content }}</p>
-        </div>
+            <div class="comment-meta">
+        <small class="text-muted">{{ c.createdAt | date:'dd/MM/yyyy à HH:mm' }}</small>
+      </div>
+        </div> 
         <div class="comment-avatar">
             {{ c.authorUsername.charAt(0) | uppercase }}
         </div>
     </div>
+    
 
     <div class="comment-input-wrapper">
         <mat-form-field appearance="outline" class="comment-field">
