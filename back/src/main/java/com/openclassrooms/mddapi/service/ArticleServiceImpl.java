@@ -80,7 +80,7 @@ public class ArticleServiceImpl implements ArticleService {
 	public List<CommentResponse> getCommentsByArticleId(Long articleId) {
 		List<Comment> comments = commentRepository.findByArticleIdOrderByCreatedAtAsc(articleId);
 		return comments.stream().map(c -> CommentResponse.builder().id(c.getId()).content(c.getContent())
-				.authorUsername(c.getAuthor().getUsername()).build()).collect(Collectors.toList());
+				.authorUsername(c.getAuthor().getUsername()).createdAt(c.getCreatedAt()).build()).collect(Collectors.toList());
 	}
 
 	@Override
