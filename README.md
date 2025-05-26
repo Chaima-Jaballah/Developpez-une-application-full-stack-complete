@@ -94,10 +94,10 @@ back/src/main/resources/SQL
 This file contains the initial data for the `theme` table:
 
 ```sql
-INSERT INTO `theme` (`id`, `description`, `name`) VALUES 
-(1, 'Développement theme', 'Développement'),
-(2, 'Design theme', 'Design'),
-(3, 'Marketing theme', 'Marketing');
+INSERT INTO theme (`id`,`description`,`name`) VALUES (1,'JavaScript theme','JavaScript');
+INSERT INTO theme (`id`,`description`,`name`) VALUES (2,'Java theme','Java');
+INSERT INTO theme (`id`,`description`,`name`) VALUES (3,'Python Theme','Python');
+INSERT INTO theme (`id`,`description`,`name`) VALUES (4,'Angular Theme','Angular');
 ```
 
 Run this script in your MySQL database after creating the `theme` table
