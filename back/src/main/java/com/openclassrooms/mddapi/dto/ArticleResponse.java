@@ -13,10 +13,10 @@ import lombok.RequiredArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class ArticleResponse {
-	Long id;
-	String title;
-	String content;
-	String authorName;
-	Instant createdAt;
-	String theme;
+	private Long id;
+	private String title;
+	private String content;
+	private String authorName;
+	private Instant createdAt;
+	private String theme;
 }

@@ -12,6 +12,6 @@ import lombok.RequiredArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class ArticleCreateResponse {
-	HttpStatus status;
-	String message;
+	private HttpStatus status;
+	private String message;
 }
