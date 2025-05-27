@@ -10,7 +10,7 @@ import lombok.RequiredArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class ArticleCreateRequest {
-	Long theme;
-	String title;
-	String content;
+	private Long theme;
+	private String title;
+	private String content;
 }

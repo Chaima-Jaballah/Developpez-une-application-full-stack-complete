@@ -7,7 +7,8 @@ import { AppstateService } from 'src/app/shared/services/appstate.service';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { SubscriptionService } from 'src/app/shared/services/subscription.service';
 import { UserService } from 'src/app/shared/services/user.service';
-const PASSWORD_PATTERN = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9]).{8,}$/;
+import { environment } from 'src/environments/environment';
+
 @Component({
   selector: 'app-profil',
   templateUrl: './profil.component.html',
@@ -32,7 +33,7 @@ export class ProfilComponent implements OnInit, OnDestroy {
     this.profilForm = new FormGroup({
       username: new FormControl('', Validators.required),
       email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [Validators.required, Validators.minLength(8), Validators.pattern(PASSWORD_PATTERN)]),
+      password: new FormControl('', [Validators.required, Validators.minLength(8), Validators.pattern(environment.PASSWORD_PATTERN)]),
     });
     this.loadUserInfo();
     this.loadSubscriptions();
